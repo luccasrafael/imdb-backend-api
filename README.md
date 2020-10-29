@@ -81,5 +81,5 @@ Você deverá criar uma API que o site [IMDb](https://www.imdb.com/) irá consul
 ``npm start ``
 
 # 🐛 Bugs conhecidos
- - Só é possível recuperar as informações de filme casa haja votos registrados
+ - Só é possível recuperar as informações de filme caso existam votos registrados
  - Ocorre erro de seeder na execução da api após registrar votos 
