@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "ed09203f-fb54-4b7a-8faf-ca370749c886",
+		"name": "teste-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signin"
+					]
+				},
+				"description": "Logar na aplicação e receber o token"
+			},
+			"response": []
+		},
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Luccas\",\r\n    \"email\": \"luccas@user.com\",\r\n    \"password\": \"1234\",\r\n    \"confirmPassword\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Cadastro de novo usuário não administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2NhcyIsImVtYWlsIjoibHVjY2FzQGdtYWlsLmNvbSIsImFkbWluIjp0cnVlLCJpYXQiOjE2MDM4Mjg3NjMsImV4cCI6MTYwNDA4Nzk2M30.Wzhm5rjH92FOwoshFzxKCTuMZA0oBmll96wGsMReBvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Recupera informação de todos os usuários e administradores do sistema"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2NhcyIsImVtYWlsIjoibHVjY2FzQGdtYWlsLmNvbSIsImFkbWluIjp0cnVlLCJpYXQiOjE2MDM4Mjg3NjMsImV4cCI6MTYwNDA4Nzk2M30.Wzhm5rjH92FOwoshFzxKCTuMZA0oBmll96wGsMReBvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Deletar\",\r\n    \"email\": \"deletar@delete.com\",\r\n    \"password\": \"1234\",\r\n    \"confirmPassword\": \"1234\",\r\n    \"admin\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Cria novo usuário ou administrador, somente administradores podem criar outros administradores"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2NhcyIsImVtYWlsIjoibHVjY2FzQGdtYWlsLmNvbSIsImFkbWluIjp0cnVlLCJpYXQiOjE2MDM4Mjg3NjMsImV4cCI6MTYwNDA4Nzk2M30.Wzhm5rjH92FOwoshFzxKCTuMZA0oBmll96wGsMReBvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"3"
+					]
+				},
+				"description": "Recupera informações de usuário específico passando informação do ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2NhcyIsImVtYWlsIjoibHVjY2FzQGdtYWlsLmNvbSIsImFkbWluIjp0cnVlLCJpYXQiOjE2MDM4Mjg3NjMsImV4cCI6MTYwNDA4Nzk2M30.Wzhm5rjH92FOwoshFzxKCTuMZA0oBmll96wGsMReBvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Deletar\",\r\n    \"email\": \"deletar@delete.com\",\r\n    \"password\": \"1234\",\r\n    \"confirmPassword\": \"1234\",\r\n    \"admin\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"3"
+					]
+				},
+				"description": "Atualiza as informações de usuário específico passando o ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6Ikx1Y2NhcyIsImVtYWlsIjoibHVjY2FzQGdtYWlsLmNvbSIsImFkbWluIjp0cnVlLCJpYXQiOjE2MDM4Mjg3NjMsImV4cCI6MTYwNDA4Nzk2M30.Wzhm5rjH92FOwoshFzxKCTuMZA0oBmll96wGsMReBvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Deletar\",\r\n    \"email\": \"deletar@delete.com\",\r\n    \"password\": \"1234\",\r\n    \"confirmPassword\": \"1234\",\r\n    \"admin\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"3"
+					]
+				},
+				"description": "Exclui usuário da base de dados apenas atualizando o campo deletedAt (soft delete)"
+			},
+			"response": []
+		},
+		{
+			"name": "Create movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjAzOTEzOTEwLCJleHAiOjE2MDQxNzMxMTB9.prcbj1xHTNWj0uzLdSTfx9LuAZbapOJgqR9TszcYvtw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Star Wars\",\r\n    \"director\": \"George Lucas\",\r\n    \"genre\": \"Sci-fi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Cria registro de novo filme, somente administradores podem criar filmes"
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjAzOTEzOTEwLCJleHAiOjE2MDQxNzMxMTB9.prcbj1xHTNWj0uzLdSTfx9LuAZbapOJgqR9TszcYvtw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Recupera as informações de todos os filmes registrados"
+			},
+			"response": []
+		},
+		{
+			"name": "Vote in movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NCwibmFtZSI6IkRlbGV0YXIiLCJlbWFpbCI6ImRlbGV0YXJAZGVsZXRlLmNvbSIsImFkbWluIjpmYWxzZSwiaWF0IjoxNjAzOTE0NzU2LCJleHAiOjE2MDQxNzM5NTZ9.vNXyu0TLqV6-dQeUv0PZHpYBiOCjpai1-vkTzCePgO0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vote\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/1/vote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"1",
+						"vote"
+					]
+				},
+				"description": "Somente usuários  não administradores podem votar em filmes"
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjAzOTEzOTEwLCJleHAiOjE2MDQxNzMxMTB9.prcbj1xHTNWj0uzLdSTfx9LuAZbapOJgqR9TszcYvtw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"1"
+					]
+				},
+				"description": "Recupera as informações de um filme específico"
+			},
+			"response": []
+		},
+		{
+			"name": "Get movie using filters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjAzOTEzOTEwLCJleHAiOjE2MDQxNzMxMTB9.prcbj1xHTNWj0uzLdSTfx9LuAZbapOJgqR9TszcYvtw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies?name=Star Wars&director=George Lucas&genre=Sci-fi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Star Wars"
+						},
+						{
+							"key": "director",
+							"value": "George Lucas"
+						},
+						{
+							"key": "genre",
+							"value": "Sci-fi"
+						}
+					]
+				},
+				"description": "Recupera as informações de filmes com a possibilidade de uso de filtros"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
